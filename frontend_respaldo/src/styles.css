@@ -1,0 +1,1064 @@
+/* Variables globales actualizadas */
+:root {
+  /* Colores principales */
+  --primary-color: #666666;
+  --primary-dark: #444444;
+  --surface-color: #f5f5f5;
+  --background-color: #ffffff;
+  
+  /* Colores de texto */
+  --text-color: #333333;
+  --text-light: #666666;
+  
+  /* Colores de bordes y separadores */
+  --border-color: #dddddd;
+  
+  /* Colores de estado */
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --warning-color: #ff9800;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  --navbar-color: #4b1c71;
+  --navbar-gradient: linear-gradient(90deg, #4b1c71 0%, #6c3483 100%);
+  --navbar-text: #fff;
+  --navbar-text-active: #ffe082;
+
+  --ingresos-color: #2ecc40; /* Verde */
+  --basicos-color: #ff9800;  /* Naranja */
+  --deseo-color: #e53935;    /* Rojo */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--background-color);
+}
+
+/* Navbar moderno */
+.navbar {
+  background: var(--navbar-gradient) !important;
+  color: var(--navbar-text) !important;
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+body.dark .navbar {
+  background: linear-gradient(90deg, #000000 0%, #1a1a1a 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(75,28,113,0.15));
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--navbar-text) !important;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(75,28,113,0.18);
+  color: var(--navbar-text-active) !important;
+}
+
+/* Botones de importar/exportar Excel */
+.btn-upload, .btn-download {
+  background-color: #e0e0e0;
+  color: #222 !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem;
+  min-width: 120px;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn-upload:hover, .btn-download:hover {
+  background-color: #444444;
+  color: #fff !important;
+}
+
+/* Formularios modernos */
+.formulario, .dashboard-container, .contenedor-resumen, .tabla-contenedor, .seccion-registros, .contenedor-tabla-estilizada {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+body.dark .formulario {
+  background: var(--surface-color);
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+}
+
+.formulario:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.campo input, .campo select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--text-color);
+}
+
+.campo input:focus, .campo select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+/* Botones de acción */
+.botones-formulario {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.btn-guardar, .btn-filtrar, .btn-limpiar {
+  background: #4b1c71 !important;
+  color: #fff !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 120px;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-guardar:hover, .btn-filtrar:hover, .btn-limpiar:hover {
+  background: #6c3483 !important;
+  color: #ffe082 !important;
+}
+
+/* Tablas modernas */
+.tabla-contenedor,
+.contenedor-tabla-estilizada {
+  border-radius: 0 !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+body.dark .tabla-contenedor {
+  background: var(--surface-color);
+}
+
+.tabla-contenedor:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface-color);
+  table-layout: fixed;
+}
+
+.tabla th {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid var(--primary-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.dark .tabla th {
+  background: linear-gradient(90deg, #000000 0%, #1a1a1a 100%);
+  color: #ffffff;
+}
+
+.tabla td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 1rem;
+  transition: background 0.2s;
+  background: transparent;
+  color: var(--text-color);
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+body.dark .tabla td {
+  color: var(--text-color);
+}
+
+.tabla tr:nth-child(even) {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+body.dark .tabla tr:nth-child(even) {
+  background-color: #23263a;
+}
+
+.tabla tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+body.dark .tabla tr:hover {
+  background-color: #23263a;
+}
+
+.tabla tr:last-child {
+  font-weight: bold;
+  background-color: #ede9fe;
+}
+
+/* Tarjetas y dashboard modernos */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+body.dark .dashboard-container {
+  background: var(--surface-color);
+}
+
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.metrica-card {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.2s;
+  color: var(--text-color);
+}
+
+body.dark .metrica-card {
+  background: var(--surface-color);
+}
+
+.metrica-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: var(--shadow-lg);
+}
+
+.metrica-card h3 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.metrica-card p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+/* Animaciones y detalles extra */
+section {
+  animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+
+.cargando, .error, .sin-registros {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-align: center;
+  margin: 16px 0;
+  text-shadow: 0 0 8px var(--accent-color);
+}
+
+.positivo { color: var(--primary-color); }
+.negativo { color: var(--accent-color); }
+
+.titulo-formulario, .titulo-seccion, h1, h2, h3, h4, h5, h6 {
+  color: #fff !important;
+  background: #4b1c71 !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 8px #4b1c71;
+}
+
+/* Iconos billetes */
+.billetes-fondo {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Contenedores principales */
+.contenedor-resumen,
+.formulario {
+  margin-top: 1rem;
+  padding: 20px;
+}
+
+/* Tablas */
+.tabla-estilizada {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tabla-estilizada th {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  background-color: var(--primary-dark, #23263a) !important;
+  border-radius: 0 !important;
+  background-clip: padding-box;
+}
+
+body.dark .tabla-estilizada th {
+  background: linear-gradient(90deg, #000000 0%, #1a1a1a 100%);
+  color: #ffffff;
+  background-color: #1a1a1a !important;
+}
+
+.tabla-estilizada td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tabla-estilizada tr:hover {
+  background-color: #f8f8f8;
+}
+
+/* Colores según tipo */
+.tabla-estilizada tr.ingreso td:nth-child(2) {
+  color: #00B050;
+  font-weight: 500;
+}
+
+.tabla-estilizada tr.egreso td:nth-child(2) {
+  color: #FF0000;
+  font-weight: 500;
+}
+
+.sin-registros {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.contenedor-tabla-estilizada {
+  /* border-radius: 8px; */
+  max-height: 60vh;
+  overflow: auto;
+  border: 1px solid #e0e0e0;
+  background: var(--surface-color);
+}
+
+.tabla-estilizada th:first-child {
+  border-top-left-radius: 0 !important;
+}
+.tabla-estilizada th:last-child {
+  border-top-right-radius: 0 !important;
+}
+
+.tabla-estilizada tr,
+.tabla-estilizada td,
+.tabla-estilizada tbody {
+  position: static !important;
+  z-index: auto !important;
+  background: none !important;
+}
+
+.tabla-estilizada thead th,
+.tabla thead th {
+  position: sticky;
+  top: 0;
+  background: #2a223a !important;
+  color: #fff !important;
+  z-index: 100;
+}
+
+.tabla-estilizada tr:last-child td,
+.tabla tr:last-child td {
+  position: sticky;
+  bottom: 0;
+  background: #18181b !important;
+  color: #fff !important;
+  z-index: 10;
+}
+
+/* Estilos para filtros */
+.filtros-section {
+  background-color: var(--surface-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filtros-section:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.filtros-section h3 {
+  color: var(--primary-dark);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.controles-fecha {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.campo-fecha {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.campo-fecha label {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.input-fecha {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--text-color);
+}
+
+.input-fecha:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.btn-filtrar {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-filtrar:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-upload {
+  background: var(--secondary-color);
+}
+
+.btn-download {
+  background: var(--accent-color);
+}
+
+/* Tabla de registros */
+.seccion-registros {
+  background: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+  transition: box-shadow 0.3s;
+}
+
+.seccion-registros:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.contenedor-tabla-estilizada {
+  max-height: 60vh;
+  overflow: auto;
+  border-radius: 12px;
+  background: var(--surface-color);
+}
+
+.tabla-estilizada {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface-color);
+}
+
+.tabla-estilizada th:first-child {
+  border-top-left-radius: 0 !important;
+}
+
+.tabla-estilizada th:last-child {
+  border-top-right-radius: 0 !important;
+}
+
+.tabla-estilizada td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.tabla-estilizada tr:hover td {
+  background: var(--background-color);
+}
+
+.tabla-estilizada tr.fila-ingreso td {
+  color: var(--primary-color);
+}
+
+.tabla-estilizada tr.fila-egreso td {
+  color: var(--accent-color);
+}
+
+.tabla-estilizada tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.tabla-estilizada tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+.sin-registros {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/****************************
+  COLORES POR TIPO DE REGISTRO
+****************************/
+.fila-ingreso td,
+.tabla-estilizada tr.ingreso td:nth-child(2),
+.metrica-card.ingresos p {
+  color: var(--primary-color) !important;
+}
+.fila-basicos td,
+.metrica-card.basicos p {
+  color: var(--basicos-color) !important;
+}
+.fila-deseo td,
+.metrica-card.deseo p {
+  color: var(--accent-color) !important;
+}
+
+/****************************
+  MÉTRICAS DASHBOARD
+****************************/
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.metrica-card {
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.metrica-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.metrica-card p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+/****************************
+  TABLAS: COLORES POR TIPO
+****************************/
+.tabla tr.fila-ingreso td:nth-child(5),
+.tabla-estilizada tr.ingreso td:nth-child(2) {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+.tabla tr.fila-basicos td:nth-child(5) {
+  color: var(--basicos-color) !important;
+  font-weight: 600;
+}
+.tabla tr.fila-deseo td:nth-child(5) {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+}
+
+/* Estilos para la fila de total en tablas */
+.tabla tr:last-child,
+.tabla-estilizada tr:last-child {
+  background: var(--primary-dark) !important;
+}
+
+.tabla tr:last-child td,
+.tabla-estilizada tr:last-child td {
+  color: white !important;
+  font-weight: 700;
+}
+
+/* Selector de mes en dashboard */
+.selector-mes {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  background-color: var(--surface-color);
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.selector-mes:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.selector-mes option {
+  background: var(--surface-color);
+  color: var(--text-color);
+  padding: 8px;
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Estados de filas */
+.fila-ingreso {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.fila-egreso {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Mensajes de error y éxito */
+.error {
+  background-color: var(--error-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.success {
+  background-color: var(--success-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+/* Contenedor de gráficos */
+.grafico-contenedor {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  margin: 1rem 0;
+}
+
+/* Títulos */
+.titulo-formulario {
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Filtros */
+.filtros-section {
+  background-color: var(--surface-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.controles-fecha {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.campo-fecha {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-fecha {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--text-color);
+}
+
+/* Botones de acción */
+.botones-formulario {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-limpiar {
+  background-color: var(--text-light);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-limpiar:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Sin registros */
+.sin-registros {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Ajuste del contenedor principal para el navbar */
+.app-container {
+  padding-top: 80px;
+}
+
+/* Ajuste de los contenedores de formularios y tablas */
+.formulario, .dashboard-container, .contenedor-resumen, .tabla-contenedor, .seccion-registros {
+  margin-top: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Ajuste para el resumen mensual */
+.contenedor-resumen {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.tabla-resumen {
+  min-width: 1000px;
+}
+
+/* Ajuste para los botones de acción en el resumen */
+.acciones-resumen {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+/* Resumen mensual: mostrar números completos */
+.tabla th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tabla td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 1rem;
+  transition: background 0.2s;
+  background: transparent;
+  color: var(--text-color);
+  /* Quitar el corte de texto para los datos */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Si hay celdas específicas para números, puedes usar una clase, por ejemplo: */
+.tabla td.numero, .tabla-estilizada td.numero {
+  font-family: 'Consolas', 'Menlo', 'Monaco', monospace;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Colores de texto por tipo de registro */
+.fila-ingreso td, .fila-ingreso .text-ingreso, .text-ingreso {
+  color: var(--ingresos-color) !important;
+  font-weight: 600;
+}
+.fila-basicos td, .fila-basicos .text-basicos, .text-basicos {
+  color: var(--basicos-color) !important;
+  font-weight: 600;
+}
+.fila-deseo td, .fila-deseo .text-deseo, .text-deseo {
+  color: var(--deseo-color) !important;
+  font-weight: 600;
+}
+
+/* —— Estilos base para formulario —— */
+.formulario, .formulario-carga {
+  position: relative;                /* para el pseudo-elemento */
+  background: rgba(255,255,255,0.8); /* Glass: si lo quieres sólido, usa var(--background-color) */
+  /* background: var(--surface-color); */
+  backdrop-filter: blur(8px);        /* Glassmorphism */
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  color: var(--text-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+/* —— Borde de acento —— */
+.formulario::before,
+.formulario-carga::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px; height: 100%;
+  background: linear-gradient(180deg, var(--navbar-color), var(--primary-dark));
+}
+
+/* —— Efecto hover —— */
+.formulario:hover, .formulario-carga:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* —— Labels destacados —— */
+.formulario label, 
+.formulario-carga label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--navbar-color);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* —— Inputs estilizados —— */
+.formulario input, .formulario select,
+.formulario textarea,
+.formulario-carga input, .formulario-carga select,
+.formulario-carga textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus,
+.formulario-carga input:focus, .formulario-carga select:focus, .formulario-carga textarea:focus {
+  border-color: var(--navbar-color);
+  box-shadow: 0 0 0 3px rgba(75,28,113,0.2);
+  outline: none;
+}
+
+/* —— Botones de acción dentro del formulario —— */
+.formulario .botones-formulario,
+.formulario-carga .botones-formulario {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+}
+
+.formulario .botones-formulario button,
+.formulario-carga .botones-formulario button {
+  background: var(--navbar-color);
+  color: var(--navbar-text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.formulario .botones-formulario button:hover,
+.formulario-carga .botones-formulario button:hover {
+  background: var(--navbar-text-active);
+  transform: translateY(-2px);
+  color: var(--navbar-text);
+}
+
+.tabla-estilizada thead th {
+  position: sticky;
+  top: 0;
+  background: #2a223a !important; /* Fondo oscuro sólido */
+  color: #fff !important;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.tabla-estilizada tr:last-child td {
+  position: sticky;
+  bottom: 0;
+  background: var(--primary-dark) !important;
+  color: #fff !important;
+  z-index: 10;
+}
+
+.tabla-estilizada th,
+.tabla th,
+.tabla-estilizada td,
+.tabla td {
+  font-size: 0.92rem !important;
+  padding: 0.5rem 0.7rem !important;
+}
+
+.tabla-resumen th,
+.tabla-resumen td {
+  font-size: 0.75rem !important;
+  padding: 0.3rem 0.4rem !important;
+}
