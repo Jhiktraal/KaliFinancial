@@ -3,7 +3,7 @@ from flask_cors import CORS
 import sqlite3
 import pandas as pd
 from io import BytesIO
-from reportlab.pdfgen import canvas
+ # from reportlab.pdfgen import canvas
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import os
@@ -429,6 +429,7 @@ def exportar_excel():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+"""
 @app.route('/api/exportar-pdf')
 def exportar_pdf():
     conn = get_db_connection()
@@ -452,6 +453,7 @@ def exportar_pdf():
         return send_file(buffer, mimetype='application/pdf', download_name='reporte.pdf')
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+"""
 
 @app.route('/api/transacciones', methods=['GET'])
 def get_transacciones():
