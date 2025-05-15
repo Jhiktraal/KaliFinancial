@@ -19,9 +19,11 @@ jobs:
         run: npm ci
         working-directory: ./frontend  # Ajusta esto si tu proyecto está en otra ruta
 
-      - name: Build
-        run: npm run build
-        working-directory: ./frontend  # Ajusta esto si tu proyecto está en otra ruta
+- name: Build
+  run: npm run build
+  working-directory: ./frontend
+  env:  # <--- Agrega esto
+    CI: false  # Desactiva el modo CI en React Scripts
 
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
